@@ -165,8 +165,28 @@ mainContainer.addEventListener('click', function(event){
         }
 
         calculateCount();
+    }else if(event.target.closest('.btn-delete')){
+        const cart = event.target.closest('.cart');
+        const jobsName = cart.querySelector('.jobsName').innerText;
+
+        const isconfirmed = confirm(`Are you sure to delete "${jobsName}" ?`);
+
+        if(!isconfirmed){
+            return;
+        }
+        interviewList = interviewList.filter(item => item.jobsName !== jobsName);
+        rejectedList = rejectedList.filter(item => item.jobsName !== jobsName);
+        cart.remove();
+
+        if(currentStatus === 'interview-filter-btn'){
+            renderInterview();
+        }else if(currentStatus === 'rejected-filter-btn'){
+            renderRejected();
+        }
+        calculateCount();        
     }    
 })
+
 
 
 function renderInterview (){
@@ -189,8 +209,8 @@ function renderInterview (){
                     <p class="statu text-green-600 bg-green-100 border border-green-600 px-3 py-2 rounded-sm inline-block">${interview.statu}</p>
                     <p class="notes">${interview.notes}</p>
                     <div class="flex gap-5">
-                        <button class="cursor-pointer interview-btn border border-green-500 font-semibold text-green-500 px-4 py-2 rounded-sm">INTERVIEW</button>
-                        <button class="cursor-pointer rejected-btn border border-red-500 font-semibold text-red-500 px-4 py-2 rounded-sm">REJECTED</button>
+                        <button class="cursor-pointer interview-btn border border-green-500 font-semibold text-green-500 px-4 py-2 rounded-sm hover:bg-green-50">INTERVIEW</button>
+                        <button class="cursor-pointer rejected-btn border border-red-500 font-semibold text-red-500 px-4 py-2 rounded-sm hover:bg-red-50">REJECTED</button>
                     </div>
                 </div>
                 <div>
@@ -219,8 +239,8 @@ function renderRejected (){
                     <p class="statu text-red-600 bg-red-100 border border-red-600 px-3 py-2 rounded-sm inline-block">${rejected.statu}</p>
                     <p class="notes">${rejected.notes}</p>
                     <div class="flex gap-5">
-                        <button class="cursor-pointer interview-btn border border-green-500 font-semibold text-green-500 px-4 py-2 rounded-sm">INTERVIEW</button>
-                        <button class="cursor-pointer rejected-btn border border-red-500 font-semibold text-red-500 px-4 py-2 rounded-sm">REJECTED</button>
+                        <button class="cursor-pointer interview-btn border border-green-500 font-semibold text-green-500 px-4 py-2 rounded-sm hover:bg-green-50">INTERVIEW</button>
+                        <button class="cursor-pointer rejected-btn border border-red-500 font-semibold text-red-500 px-4 py-2 rounded-sm hover:bg-red-50">REJECTED</button>
                     </div>
                 </div>
                 <div>
