@@ -34,6 +34,33 @@ function calculateCount(){
         jobsCount.innerText = totaljobs;
     }
 
+    const emmtyContainer = document.getElementById("empty-container");
+
+    if(currentStatus === 'all-filter-btn'){
+        if(totaljobs === 0){
+            allCardSection.classList.add('hidden');
+            filterSection.classList.add('hidden');
+            emmtyContainer.classList.remove('hidden');
+        }else{
+            emmtyContainer.classList.add('hidden');
+        }
+    }
+    else if(currentStatus === 'interview-filter-btn'){
+        if(interviewList.length === 0){
+            filterSection.classList.add('hidden');
+            emmtyContainer.classList.remove('hidden');
+        }else{
+            emmtyContainer.classList.add('hidden');
+        }
+    }
+    else if(currentStatus === 'rejected-filter-btn'){
+        if(rejectedList.length === 0){
+            filterSection.classList.add('hidden');
+            emmtyContainer.classList.remove('hidden');
+        }else{
+            emmtyContainer.classList.add('hidden')
+        }
+    }
 }
 
 calculateCount();
@@ -41,7 +68,6 @@ calculateCount();
 function calculateJobs(){
     
 }
-
 
 
 
