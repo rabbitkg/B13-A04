@@ -17,12 +17,34 @@ const filterSection = document.getElementById("filtered-section");
 
 
 function calculateCount(){
-    total.innerText = allCardSection.children.length;
-    jobsCount.innerText = allCardSection.children.length;
+
+    const totaljobs = allCardSection.children.length;
+
+    total.innerText = totaljobs;
     interviewCount.innerText = interviewList.length;
     rejectedCount.innerText = rejectedList.length;
+
+    if(currentStatus === 'interview-filter-btn'){
+        jobsCount.innerText = `${interviewList.length} of ${totaljobs}`;
+    }
+    else if(currentStatus === 'rejected-filter-btn'){
+        jobsCount.innerText = `${rejectedList.length} of ${totaljobs}`;
+    }
+    else{
+        jobsCount.innerText = totaljobs;
+    }
+
 }
+
 calculateCount();
+
+function calculateJobs(){
+    
+}
+
+
+
+
 
 function toggleStyle(id){
     allFilterBtn.classList.remove('bg-blue-500', 'text-white');
@@ -51,6 +73,7 @@ function toggleStyle(id){
         filterSection.classList.remove('hidden');
         renderRejected();
     }
+    calculateCount();
 }
 
 mainContainer.addEventListener('click', function(event){
@@ -144,7 +167,7 @@ function renderInterview (){
                     <div>
                         <p class="selary text-[#323B49] text-[14px] leading-5">${interview.selary}</p>
                     </div>
-                    <p class="statu">${interview.statu}</p>
+                    <p class="statu text-green-600 bg-green-100 border border-green-600 px-3 py-2 rounded-sm inline-block">${interview.statu}</p>
                     <p class="notes">${interview.notes}</p>
                     <div class="flex gap-5">
                         <button class="cursor-pointer interview-btn border border-green-500 font-semibold text-green-500 px-4 py-2 rounded-sm">INTERVIEW</button>
@@ -174,7 +197,7 @@ function renderRejected (){
                     <div>
                         <p class="selary text-[#323B49] text-[14px] leading-5">${rejected.selary}</p>
                     </div>
-                    <p class="statu">${rejected.statu}</p>
+                    <p class="statu text-red-600 bg-red-100 border border-red-600 px-3 py-2 rounded-sm inline-block">${rejected.statu}</p>
                     <p class="notes">${rejected.notes}</p>
                     <div class="flex gap-5">
                         <button class="cursor-pointer interview-btn border border-green-500 font-semibold text-green-500 px-4 py-2 rounded-sm">INTERVIEW</button>
@@ -188,3 +211,4 @@ function renderRejected (){
         filterSection.appendChild(div);
     }
 }
+
