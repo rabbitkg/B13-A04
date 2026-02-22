@@ -65,9 +65,9 @@ function calculateCount(){
 
 calculateCount();
 
-function calculateJobs(){
+// function calculateJobs(){
     
-}
+// }
 
 
 

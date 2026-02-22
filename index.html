@@ -17,18 +17,18 @@
 
 </head>
 <body class="bg-base-200">
-    <header class="w-[80%] mx-auto pt-15 sticky z-10 top-0 bg-base-200">
-        <h1 class="text-6xl font-bold text-black-500">Job Application Tracker</h1>
-        <div class="grid grid-cols-3 gap-4 mt-5">
-            <div class="bg-white p-4 rounded-2xl">
+    <header class="w-[95%] md:w-[80%] mx-auto pt-8 md:pt-15 sticky z-10 top-0 bg-base-200">
+        <h1 class="text-3xl md:text-6xl font-bold text-black-500">Job Application Tracker</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
+            <div class="bg-white p-2 md:p-4 rounded-2xl">
                 <p class="font-medium">Total</p>
                 <p id="total" class="text-[24px] font-bold">0</p>
             </div>
-            <div class="bg-white p-4 rounded-2xl">
+            <div class="bg-white p-2 md:p-4 rounded-2xl">
                 <p class="font-medium">Interview</p>
                 <p id="interview" class="text-green-500 text-[24px] font-bold">0</p>
             </div>
-            <div class="bg-white p-4 rounded-2xl">
+            <div class="bg-white p-2 md:p-4 rounded-2xl">
                 <p class="font-medium">Rejected</p>
                 <p id="rejected" class="text-red-500 text-[24px] font-bold">0</p>
             </div>
@@ -36,7 +36,7 @@
         <hr class="my-8 text-gray-300">
     </header>
 
-    <main class="w-[80%] mx-auto pb-15">
+    <main class="w-[95%] md:w-[80%] mx-auto pb-10 md:pb-15">
         <div class="flex justify-between">
             <h2 class="font-semibold text-2xl mb-6">Available Jobs</h2>
             <p class="text-[#64748B]"><span id="jobs">0</span> Jobs</p>
@@ -54,7 +54,7 @@
         <section id="allCard" class="flex flex-col gap-4">
 
             <!-- card-1 -->
-            <div class="cart flex justify-between bg-white py-6 px-6 rounded-xl border border-gray-200">
+            <div class="cart flex flex-col md:flex-row gap-6 md:justify-between bg-white py-6 px-4 md:px-6 rounded-xl border border-gray-200">
                 <div class="space-y-6">
                     <div>
                         <p class="jobsName text-[#002C5C] text-[18px] font-semibold leading-[26px]">Mobile First Corp</p>
@@ -71,12 +71,12 @@
                     </div>
                 </div>
                 <div>
-                    <button class="btn-delete border border-gray-300 flex items-center justify-center rounded-full w-12 h-12 hover:border-red-300 transition cursor-pointer"><i class="fa-regular fa-trash-can text-lg"></i></button>
+                    <button class="btn-delete border border-gray-300 flex items-center justify-center rounded-full w-12 h-12 hover:border-red-400 hover:bg-red-50 transition cursor-pointer"><i class="fa-regular fa-trash-can text-lg"></i></button>
                 </div>
             </div>
 
             <!-- card-2 -->
-            <div class="cart flex justify-between bg-white py-6 px-6 rounded-xl border border-gray-200">
+            <div class="cart flex flex-col md:flex-row gap-6 md:justify-between bg-white py-6 px-4 md:px-6 rounded-xl border border-gray-200">
                 <div class="space-y-6">
                     <div>
                         <p class="jobsName text-[#002C5C] text-[18px] font-semibold leading-[26px]">WebFlow Agency</p>
@@ -89,7 +89,7 @@
                     <p class="notes">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                     <div class="flex gap-5">
                         <button class="cursor-pointer interview-btn border border-green-500 font-semibold text-green-500 px-4 py-2 rounded-sm hover:bg-green-50">INTERVIEW</button>
-                        <button class="cursor-pointer rejected-btn border border-red-500 font-semibold text-red-500 px-4 py-2 rounded-sm hover:bg-red-50">REJECTED</button>
+                        <button class="cursor-pointer rejected-btn border border-red-500 font-semibold text-red-500 px-4 py-2 rounded-sm hover:border-red-400 hover:bg-red-50">REJECTED</button>
                     </div>
                 </div>
                 <div>
@@ -98,7 +98,7 @@
             </div>
 
             <!-- card-3 -->
-            <div class="cart flex justify-between bg-white py-6 px-6 rounded-xl border border-gray-200">
+            <div class="cart flex flex-col md:flex-row gap-6 md:justify-between bg-white py-6 px-4 md:px-6 rounded-xl border border-gray-200">
                 <div class="space-y-6">
                     <div>
                         <p class="jobsName text-[#002C5C] text-[18px] font-semibold leading-[26px]">Data Viz Solutions</p>
@@ -120,7 +120,7 @@
             </div>
 
             <!-- card-4 -->
-            <div class="cart flex justify-between bg-white py-6 px-6 rounded-xl border border-gray-200">
+            <div class="cart flex flex-col md:flex-row gap-6 md:justify-between bg-white py-6 px-4 md:px-6 rounded-xl border border-gray-200">
                 <div class="space-y-6">
                     <div>
                         <p class="jobsName text-[#002C5C] text-[18px] font-semibold leading-[26px]">Cloud First Inc</p>
@@ -142,7 +142,7 @@
             </div>
 
             <!-- card-5 -->
-            <div class="cart flex justify-between bg-white py-6 px-6 rounded-xl border border-gray-200">
+            <div class="cart flex flex-col md:flex-row gap-6 md:justify-between bg-white py-6 px-4 md:px-6 rounded-xl border border-gray-200">
                 <div class="space-y-6">
                     <div>
                         <p class="jobsName text-[#002C5C] text-[18px] font-semibold leading-[26px]">Innovation Labs</p>
@@ -164,7 +164,7 @@
             </div>
 
             <!-- card-6 -->
-            <div class="cart flex justify-between bg-white py-6 px-6 rounded-xl border border-gray-200">
+            <div class="cart flex flex-col md:flex-row gap-6 md:justify-between bg-white py-6 px-4 md:px-6 rounded-xl border border-gray-200">
                 <div class="space-y-6">
                     <div>
                         <p class="jobsName text-[#002C5C] text-[18px] font-semibold leading-[26px]">Mega Corp Solutions</p>
@@ -186,7 +186,7 @@
             </div>
 
             <!-- card-7 -->
-            <div class="cart flex justify-between bg-white py-6 px-6 rounded-xl border border-gray-200">
+            <div class="cart flex flex-col md:flex-row gap-6 md:justify-between bg-white py-6 px-4 md:px-6 rounded-xl border border-gray-200">
                 <div class="space-y-6">
                     <div>
                         <p class="jobsName text-[#002C5C] text-[18px] font-semibold leading-[26px]">Start up XYZ</p>
@@ -208,7 +208,7 @@
             </div>
 
             <!-- card-8 -->
-            <div class="cart flex justify-between bg-white py-6 px-6 rounded-xl border border-gray-200">
+            <div class="cart flex flex-col md:flex-row gap-6 md:justify-between bg-white py-6 px-4 md:px-6 rounded-xl border border-gray-200">
                 <div class="space-y-6">
                     <div>
                         <p class="jobsName text-[#002C5C] text-[18px] font-semibold leading-[26px]">Tech Corp Industries</p>
@@ -230,7 +230,7 @@
             </div>
         </section>
 
-        <section id="empty-container" class="hidden flex flex-col items-center justify-center py-25 text-center border border-gray-200 bg-white rounded-md mb-25">
+        <section id="empty-container" class="hidden flex flex-col items-center justify-center py-16 md:py-25 text-center border border-gray-200 bg-white rounded-md mb-25">
             <img src="./jobs.png" alt="There is no available jobs here like PNG" class="w-24 mb-5 opacity-80">
             <h2 class="text-[24px] font-semibold text-[#002C5C] leading-8">No Jobs Available</h2>
             <p class="text-[#64748B] mt-1">Check back soon for new job opportunities</p>
