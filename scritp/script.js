@@ -76,6 +76,8 @@ function toggleStyle(id){
     calculateCount();
 }
 
+
+
 mainContainer.addEventListener('click', function(event){
 
     if(event.target.classList.contains('interview-btn')){
@@ -87,7 +89,15 @@ mainContainer.addEventListener('click', function(event){
         const statu = parenNode.querySelector('.statu').innerText;
         const notes = parenNode.querySelector('.notes').innerText;
 
-        parenNode.querySelector('.statu').innerText = 'INTERVIEW'
+         const statusModifid = parenNode.querySelector('.statu');
+        statusModifid.innerText = 'INTERVIEW';
+        statusModifid.className = 'statu px-3 py-2 rounded-sm inline-block';
+        statusModifid.classList.add(
+            'text-green-600',
+            'bg-green-100',
+            'border',
+            'border-green-6000'
+        )
 
         const cardInfo ={
             jobsName,
@@ -122,7 +132,16 @@ mainContainer.addEventListener('click', function(event){
         const statu = parenNode.querySelector('.statu').innerText;
         const notes = parenNode.querySelector('.notes').innerText;
 
-        parenNode.querySelector('.statu').innerText = 'REJECTED'
+        const statusModifid = parenNode.querySelector('.statu');
+        statusModifid.innerText = 'REJECTED';
+        statusModifid.className = 'statu px-3 py-2 rounded-sm inline-block';
+        statusModifid.classList.add(
+            'text-red-600',
+            'bg-red-100',
+            'border',
+            'border-red-6000'
+        )
+        
 
         const cardInfo ={
             jobsName,
